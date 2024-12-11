@@ -1,8 +1,11 @@
 const input = document.getElementById('input')
 const btn = document.getElementById('btn')
-const para = document.getElementById('para')
 
 async function getData() {
+
+    const resultContainer = document.getElementById('resultContainer');
+    resultContainer.innerHTML = '';
+
     const url = `https://restcountries.com/v3.1/name/${input.value}`;
     const options = {
         method: 'GET',
@@ -12,31 +15,29 @@ async function getData() {
         const response = await fetch(url, options);
         const result = await response.json();
 
-        // Extract relevant fields
-        const filteredData = result.map((country) => ({
-            name: country.name.common,
-            capital: country.capital ? country.capital[0] : 'No Capital',
-            continents: country.continents,
-            currencies: country.currencies,
-            languages: country.languages,
-            population: country.population
-        }));
+        result.forEach((country) => {
+            const name = country.name.common;
+            const capital = country.capital ? country.capital[0] : 'No Capital';
+            const continents = country.continents.join(', ');
+            const currencies = Object.values(country.currencies || {}).map((currency) => currency.name).join(', ');
+            const languages = Object.values(country.languages || {}).join(', ');
+            const population = country.population;
+            const borders = Object.values(country.borders || {}).join(', ')
 
-        //Log every data
-        for (const country of filteredData) {
-            console.log('Country:', country.name);
-            console.log('Capital:', country.capital);
-            console.log('Continents:', country.continents.join(', '));
-            const currencyNames = Object.values(country.currencies || {}).map((currency) => currency.name);
-            console.log('Currencies:', currencyNames.join(', '));
-            const languageNames = Object.values(country.languages || {});
-            console.log('Languages:', languageNames.join(', '));
-            console.log('Population:', country.population);
-        }
-
-        // para.innerHTML = filteredData.capital
-        console.log(filteredData);
-        console.log(result);
+            const countryDiv = document.createElement('div');
+            countryDiv.classList.add('country');
+            countryDiv.innerHTML = `
+                <h3>${name}</h3>
+                <p><strong>Capital:</strong> ${capital}</p>
+                <p><strong>Currency:</strong> ${currencies}</p>
+                <p><strong>Languages:</strong> ${languages}</p>
+                <p><strong>Continents:</strong> ${continents}</p>
+                <p><strong>Population:</strong> ${population}</p>
+                <p><strong>Borders:</strong> ${borders ? borders : 'NO BORDERS FOUND'}</p>
+                <hr>
+            `;
+            resultContainer.appendChild(countryDiv);
+        });
 
     } catch (error) {
         console.error(error);
@@ -45,5 +46,4 @@ async function getData() {
 
 btn.addEventListener('click', () => {
     getData();
-    console.log('INPUT VALUE :: =', input.value);
 })

@@ -4,16 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>COUNTRY DATA API WEB APP | EZEMMET</title>
 </head>
 
-<body>
-    <div>
-        COUNTRY DATA
+<body class="bg-black text-white">
+    <div id="pageLayout" class="flex">
+        <div id="sidebar" class="w-[30vw]">
+            <input type="text" id="input" class="border border-red-600 rounded bg-black outline-none">
+            <button id="btn">Search</button>
+        </div>
+        <div id="mainPage" class="w-[70vw]">
+            <h2>COUNTRY DATA</h2>
+            <div id="resultContainer"></div>
+        </div>
     </div>
-    <p id="para"></p>
-    <input type="text" id="input">
-    <button id="btn">Search</button>
 </body>
 <script src="./app.js"></script>
 
