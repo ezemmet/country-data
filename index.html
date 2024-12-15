@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>COUNTRY DATA API WEB APP | EZEMMET</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body class="bg-black text-white">
-    <div id="pageLayout" class="flex">
-        <div id="sidebar" class="w-[30vw]">
-            <input type="text" id="input" class="border border-red-600 rounded bg-black outline-none">
-            <button id="btn">Search</button>
+    <div id="pageLayout" class="lg:flex h-screen">
+        <div id="sidebar" class="w-[25%] p-[2rem] lg:overflow-y-scroll custom-sidebar-scroll">
+            <div class="border border-red-600 rounded-[20px]">
+                <input type="text" id="input" class="border-r border-red-600 py-[0.5rem] text-sm px-[1rem] bg-black outline-none rounded-tl-[20px] rounded-bl-[20px]">
+                <button id="btn" class="text-red-500 hover:text-green-500 font-semibold ml-[0.5rem]">Search</button>
+            </div>
         </div>
-        <div id="mainPage" class="w-[70vw]">
-            <h2>COUNTRY DATA</h2>
+        <div id="mainPage" class="w-[75%] p-[3rem] lg:overflow-y-scroll custom-main-scroll">
+            <h2 class="text-center text-3xl">COUNTRY DATA</h2>
             <div id="resultContainer"></div>
         </div>
     </div>

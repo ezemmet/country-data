@@ -27,7 +27,7 @@ async function getData() {
             const countryDiv = document.createElement('div');
             countryDiv.classList.add('country');
             countryDiv.innerHTML = `
-                <h3>${name}</h3>
+                <h1>${name}</h1>
                 <p><strong>Capital:</strong> ${capital}</p>
                 <p><strong>Currency:</strong> ${currencies}</p>
                 <p><strong>Languages:</strong> ${languages}</p>
