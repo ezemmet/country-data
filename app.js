@@ -1,5 +1,6 @@
 const input = document.getElementById('input')
 const btn = document.getElementById('btn')
+const resultPara = document.getElementById('resultPara')
 
 async function getData() {
 
@@ -27,14 +28,15 @@ async function getData() {
             const countryDiv = document.createElement('div');
             countryDiv.classList.add('country');
             countryDiv.innerHTML = `
-                <h1>${name}</h1>
-                <p><strong>Capital:</strong> ${capital}</p>
-                <p><strong>Currency:</strong> ${currencies}</p>
-                <p><strong>Languages:</strong> ${languages}</p>
-                <p><strong>Continents:</strong> ${continents}</p>
-                <p><strong>Population:</strong> ${population}</p>
-                <p><strong>Borders:</strong> ${borders ? borders : 'NO BORDERS FOUND'}</p>
-                <hr>
+            <div class="parent">
+                <h1 class="heading">${name}</h1>
+                <p><span>Capital:</span> ${capital}</p>
+                <p><span>Currency:</span> ${currencies}</p>
+                <p><span>Languages:</span> ${languages}</p>
+                <p><span>Continent:</span> ${continents}</p>
+                <p><span>Population:</span> ${population}</p>
+                <p><span>Borders:</strong> ${borders ? borders : 'NO BORDERS FOUND'}</p>
+            </div>       
             `;
             resultContainer.appendChild(countryDiv);
         });
@@ -46,4 +48,5 @@ async function getData() {
 
 btn.addEventListener('click', () => {
     getData();
+    resultPara.innerHTML = `Showing results for "${input.value}"`
 })

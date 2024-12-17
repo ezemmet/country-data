@@ -12,13 +12,43 @@
 <body class="bg-black text-white">
     <div id="pageLayout" class="lg:flex h-screen">
         <div id="sidebar" class="w-[25%] p-[2rem] lg:overflow-y-scroll custom-sidebar-scroll">
-            <div class="border border-red-600 rounded-[20px]">
-                <input type="text" id="input" class="border-r border-red-600 py-[0.5rem] text-sm px-[1rem] bg-black outline-none rounded-tl-[20px] rounded-bl-[20px]">
-                <button id="btn" class="text-red-500 hover:text-green-500 font-semibold ml-[0.5rem]">Search</button>
+            <div class="border border-red-600 rounded">
+                <input type="text" id="input"
+                    class="border-r border-red-600 py-[0.5rem] text-sm px-[1rem] bg-black outline-none rounded-tl-[10px] rounded-bl">
+                <button id="btn" class="hover:text-green-500 font-semibold ml-[0.1rem] font-primary px-[0.5rem] py-[0.2rem]">Search</button>
             </div>
+            <p id="resultPara" class="bg-[#141414] mt-[1rem] h-[40px] rounded flex items-center justify-center"></p>
+            <p class="bg-[#141414] mt-[1rem] rounded p-[0.5rem]"><span class="text-red-600 font-semibold">NOTE: </span>Please try full name of countries for better results.</p>
+            <div class="bg-[#141414] mt-[1rem] rounded p-[0.5rem] text-center">
+                <h3 class="font-primary text-2xl text-red-600">ABOUT</h3>
+                <p class="text-sm mt-[0.5rem]">The Country Data Web App, created by Nitin Sharma, is a comprehensive tool designed
+                    to provide quick and accurate information about any country in the world. With just a search, users
+                    can access essential details about a country's capital, currency, population, official languages,
+                    borders, and the continent it belongs to. Whether you're a student, traveler, or someone curious
+                    about global facts, this app offers a user-friendly interface and a reliable source of information
+                    to explore the world at your fingertips. Nitin's passion for data and global knowledge is reflected
+                    in this app, which strives to make learning about countries both easy and enjoyable.</p>
+            </div>
+            <div class="bg-[#141414] mt-[1rem] rounded font-primary p-[0.5rem]">
+                <h3 class="text-center text-2xl text-red-600">FOLLOW ME</h3>
+                <ul class="text-center mt-[0.5rem]">
+                    <li
+                        class="border-2 border-transparent hover:border-dotted hover:border-red-600 px-[0.4rem] py-[0.2rem] rounded">
+                        <a href="#">GITHUB</a></li>
+                    <li
+                        class="border-2 border-transparent hover:border-dotted hover:border-red-600 px-[0.4rem] py-[0.2rem] rounded">
+                        <a href="#">LINKEDIN</a></li>
+                    <li
+                        class="border-2 border-transparent hover:border-dotted hover:border-red-600 px-[0.4rem] py-[0.2rem] rounded">
+                        <a href="#">INSTAGRAM</a></li>
+                </ul>
+            </div>
+            <p class="text-sm mt-[1rem] text-center">Copyright 2024 | All rights reserved</p>
         </div>
-        <div id="mainPage" class="w-[75%] p-[3rem] lg:overflow-y-scroll custom-main-scroll">
-            <h2 class="text-center text-3xl">COUNTRY DATA</h2>
+        <div id="mainPage" class="w-[75%] px-[3rem] py-[1rem] lg:overflow-y-scroll custom-main-scroll">
+            <h2
+                class="font-semibold text-center text-3xl font-secondary border-b border-dotted border-red-600 py-[1rem] text-red-600">
+                COUNTRY DATA</h2>
             <div id="resultContainer"></div>
         </div>
     </div>

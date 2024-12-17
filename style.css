@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -40,4 +42,28 @@ body {
 
 .custom-main-scroll::-webkit-scrollbar-track {
     background-color: #1c2430;
+}
+
+.font-primary {
+    font-family: "Inconsolata", monospace;
+}
+
+.font-secondray {
+    font-family: "Montserrat", sans-serif;
+}
+
+.parent {
+    border-bottom: 2px dotted red;
+    padding: 1rem 1rem;
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+}
+
+p,
+span {
+    font-family: "Inconsolata", monospace;
 }
